@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.mother {
+  background-color: #4904aa;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.grandny {
+  position: relative;
+  display: inline-block;
+}
+
+.baby {
+  display: none;
+  position: absolute; /*absolute to parent grandny*/
+  background-color: #f1f1f1;
+  min-width: 160px;
+  width: 400px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.baby a { /*style all options*/
+  color: black;  /*font color*/
+  padding: 12px 16px; /*each option size*/
+  text-decoration: none;
+  display: block; /*each option stacking on each other*/
+}
+
+.baby a:hover {background-color: #ddd; transform: scale(1.1); animation: flash 3s infinite;}
+@keyframes flash {
+/*   0% { opacity: 1; animation-timing-function : linear; animation-fill-mode: both;}
+  25% { opacity: 0.75; animation-timing-function : ease-in-out; }
+  50% { opacity: 0.5; animation-timing-function : ease-in-out; }
+  75% { opacity: 0.25; animation-timing-function : ease-in-out; } 
+  100% { opacity: 0; animation-timing-function : linear; animation-fill-mode: both;}
+  75% { opacity: 0.25; animation-timing-function : ease-in-out; } 
+  50% { opacity: 0.5; animation-timing-function : ease-in-out; }
+  25% { opacity: 0.75; animation-timing-function : ease-in-out; } */
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.grandny:hover .baby {display: block;}
+
+.grandny:hover .mother {background-color: #7c708d;}
+</style>
+</head>
+<body>
+
+<h2>ONLY MEAT SANDWICH Dropdown</h2>
+
+<p>Move the mouse over the button to open the SANDWICH menu.</p>
+
+<div class="grandny">
+  <button class="mother">EAT ONLY MEAT</button>
+  <div class="baby" > <!--style all options*/-->
+    <a href="#">BLUE MEAT</a>
+    <a href="#">GREEN MEAT</a>
+    <a href="#">YELLOW MEAT</a>
+    <a href="#">NO MEAT</a>
+  </div>
+</div>
+
+</body>
+</html>
